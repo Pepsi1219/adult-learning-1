@@ -33,7 +33,8 @@
     #appShell.presentation-active [data-presentation-item="image"] { --presentation-from: translateX(42px) scale(.96); }
     #appShell.presentation-active [data-presentation-item="subtitle"] { --presentation-from: translateY(18px); }
     #appShell.presentation-active [data-presentation-item="important"] { --presentation-from: translateX(-28px); }
-    #appShell.presentation-active [data-presentation-item="practice"] { --presentation-from: translateX(28px); }
+    #appShell.presentation-active [data-presentation-item="practice"] { --presentation-from: translateX(28px); max-height: none; }
+    #appShell.presentation-active [data-presentation-item="practice"] > div:last-child { max-height: none; overflow: visible; }
     #appShell.presentation-active [data-presentation-item].is-revealed {
       visibility: visible;
       pointer-events: auto;

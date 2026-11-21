@@ -5,30 +5,26 @@ window.COURSE_PARTS[0] = {
   image: "images/part1/intrinsic-motivation.svg",
   th: {
     title: "แรงจูงใจภายใน",
-    short: "ผู้ใหญ่เรียนรู้เพราะเหตุผลภายในที่มีความหมาย",
-    overview: "ผู้ใหญ่มีระบบแรงจูงใจภายในที่ซับซ้อน เช่น ความฝัน ความเชื่อ ความรู้สึกมีคุณค่าในตนเอง และทัศนคติ ให้คำติชมเชิงบวก มุ่งเน้นความก้าวหน้า และแสดงความเคารพต่อผลงานของพวกเขา",
-    keyPoint: "แรงจูงใจเกิดขึ้นอย่างยั่งยืนเมื่อการเรียนรู้ช่วยเติมเต็มเป้าหมาย ความเชื่อมั่น และคุณค่าของผู้เรียน",
-    practice: "เชื่อมเนื้อหาเข้ากับเป้าหมายส่วนบุคคลและอาชีพ แสดงการเรียนรู้ของพวกเขาให้เห็น สร้างพื้นที่ให้ผู้เรียนเลือกแนวทาง และให้คำชมหัวข้อที่เฉพาะเจาะจง"
+    short: "ผู้ใหญ่ไม่ได้ขับเคลื่อนด้วยคำสั่ง แต่ขับเคลื่อนด้วยความภาคภูมิใจและความหมายภายในตัวเอง",
+    keyPoint: "ผู้ใหญ่ไม่ได้เปลี่ยนพฤติกรรมเพียงเพราะคำสั่งหรือกฎระเบียบ แต่ขับเคลื่อนด้วย \"คุณค่าภายใน\" เช่น ความภาคภูมิใจในฝีมือ ความก้าวหน้าในอาชีพ และการได้รับการยอมรับจากเพื่อนร่วมงานและหัวหน้า",
+    practice: "• ชื่นชมความก้าวหน้าอย่างเจาะจง (เช่น ชมวิธีการจับผ้าที่ดีขึ้น แทนการพูดลอย ๆ ว่า \"ดีมาก\")\n• ชี้ให้เห็นว่าทักษะใหม่นี้จะช่วยให้ตัวผู้เรียนทำงานสบายขึ้น ลดความเครียด หรือเติบโตในสายงานได้อย่างไร\n• ลดการตำหนิต่อหน้าผู้อื่น เปลี่ยนเป็นการโค้ชชิ่งเพื่อหาทางปรับปรุงร่วมกัน"
   },
   en: {
     title: "Intrinsic Motivation",
-    short: "Adults learn through meaningful internal drivers",
-    overview: "Adults have complex intrinsic motivation: dreams, beliefs, values, attitudes, and self-worth. Give positive feedback, highlight progress, and respect what they have achieved.",
-    keyPoint: "Sustainable motivation grows when learning supports a person's goals, confidence, and sense of value.",
-    practice: "Connect content to personal and career goals, make progress visible, offer meaningful choices, and give specific positive feedback."
+    short: "Adults are not driven by instructions, but by pride and inner meaning",
+    keyPoint: "Adults do not change behavior merely because of instructions or regulations. They are driven by intrinsic values such as pride in their skills, career advancement, and recognition from colleagues and supervisors.",
+    practice: "• Praise progress specifically (for example, recognize an improved way of handling fabric instead of vaguely saying 'Good job').\n• Explain how the new skill will make the learner's work easier, reduce stress, or support career growth.\n• Avoid criticizing people in front of others and use coaching to find ways to improve together."
   },
   lo: {
     title: "ແຮງຈູງໃຈພາຍໃນ",
-    short: "ຜູ້ໃຫຍ່ຮຽນຮູ້ດ້ວຍເຫດຜົນພາຍໃນທີ່ມີຄວາມໝາຍ",
-    overview: "ຜູ້ໃຫຍ່ມີແຮງຈູງໃຈພາຍໃນທີ່ຊັບຊ້ອນ ເຊັ່ນ ຄວາມຝັນ ຄວາມຮູ້ສຶກມີຄຸນຄ່າ ຄວາມເຊື່ອ ແລະທັດສະນະຄະຕິ. ໃຫ້ຄຳຕິຊົມໃນທາງບວກ ແລະເຄົາລົບຜົນສໍາເລັດ.",
-    keyPoint: "ແຮງຈູງໃຈຈະຢູ່ຊົງເມື່ອການຮຽນຮູ້ຊ່ວຍເສີມເປົ້າໝາຍ ຄວາມມັ່ນໃຈ ແລະຄຸນຄ່າຂອງຜູ້ຮຽນ.",
-    practice: "ເຊື່ອມເນື້ອຫາກັບເປົ້າໝາຍສ່ວນບຸກຄົນ ແລະອາຊີບ ເຮັດໃຫ້ຄວາມຄືບໜ້າເຫັນໄດ້ ໃຫ້ໂອກາດເລືອກ ແລະສະໜອງຄຳຕິຊົມທີ່ຈະແຈ້ງ."
+    short: "ຜູ້ໃຫຍ່ບໍ່ຖືກຊຸກຍູ້ດ້ວຍຄຳສັ່ງ ແຕ່ຖືກຊຸກຍູ້ດ້ວຍຄວາມພາກພູມໃຈ ແລະຄວາມໝາຍພາຍໃນ",
+    keyPoint: "ຜູ້ໃຫຍ່ບໍ່ປ່ຽນພຶດຕິກຳພຽງແຕ່ດ້ວຍຄຳສັ່ງ ຫຼື ກົດລະບຽບ ແຕ່ຖືກຊຸກຍູ້ດ້ວຍ \"ຄຸນຄ່າພາຍໃນ\" ເຊັ່ນ: ຄວາມພາກພູມໃຈໃນທັກສະ, ຄວາມກ້າວໜ້າໃນອາຊີບ ແລະ ການຍອມຮັບຈາກເພື່ອນຮ່ວມງານ ແລະ ຜູ້ບັນຊາການ.",
+    practice: "• ຊົມເຊີຍຄວາມກ້າວໜ້າແບບຈະແຈ້ງ (ຕົວຢ່າງ: ຊົມວິທີຈັບຜ້າທີ່ດີຂຶ້ນ ແທນການເວົ້າແບບກວ້າງໆວ່າ \"ດີຫຼາຍ\")\n• ຊີ້ໃຫ້ເຫັນວ່າທັກສະໃໝ່ນີ້ຈະຊ່ວຍໃຫ້ຜູ້ຮຽນເຮັດວຽກສະດວກຂຶ້ນ, ຫຼຸດຄວາມກົດດັນ ຫຼືເຕີບໂຕໃນອາຊີບໄດ້ແນວໃດ.\n• ຫຼຸດການຕຳນິຕໍ່ໜ້າຜູ້ອື່ນ ແລະປ່ຽນເປັນການໂຄຊິ່ງເພື່ອຊອກຫາວິທີປັບປຸງຮ່ວມກັນ."
   },
   vi: {
     title: "Động lực nội tại",
-    short: "Người lớn học tập vì những động lực bên trong có ý nghĩa",
-    overview: "Người lớn có động lực nội tại phức tạp như ước mơ, niềm tin, ý thức giá trị bản thân và thái độ. Hãy khen ngợi tích cực, chú trọng sự tiến bộ và tôn trọng thành tựu của họ.",
-    keyPoint: "Động lực bền vững phát triển khi việc học hỗ trợ mục tiêu, sự tự tin và giá trị của người học.",
-    practice: "Liên kết nội dung với mục tiêu cá nhân và nghề nghiệp, làm cho tiến bộ được nhìn thấy, tạo lựa chọn có ý nghĩa và đưa ra phản hồi tích cực cụ thể."
+    short: "Người lớn không được thúc đẩy bởi mệnh lệnh mà bởi niềm tự hào và ý nghĩa bên trong",
+    keyPoint: "Người lớn không thay đổi hành vi chỉ vì mệnh lệnh hoặc quy định, mà được thúc đẩy bởi \"giá trị nội tại\" như niềm tự hào về kỹ năng, sự phát triển nghề nghiệp và sự công nhận từ đồng nghiệp và cấp trên.",
+    practice: "• Khen ngợi tiến bộ một cách cụ thể (ví dụ: khen cách cầm vải tốt hơn thay vì chỉ nói chung chung \"Làm tốt lắm\").\n• Giải thích kỹ năng mới sẽ giúp người học làm việc thuận tiện hơn, giảm căng thẳng hoặc phát triển trong sự nghiệp như thế nào.\n• Tránh chỉ trích người học trước mặt người khác và chuyển sang huấn luyện để cùng nhau tìm cách cải thiện."
   }
 };

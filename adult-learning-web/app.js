@@ -11,6 +11,59 @@
     return String(value).replace(/[&<>'"]/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":"&#39;", '"':'&quot;' }[char]));
   }
 
+  function renderBulletList(value) {
+    const lines = String(value).split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    if (lines.length > 1 && lines.every(line => line.startsWith('•'))) {
+      return `<ul class="m-0 list-disc space-y-2 pl-5 text-[15px] leading-7 text-black/65">${lines.map(line => `<li>${escapeHtml(line.replace(/^•\s*/, ''))}</li>`).join('')}</ul>`;
+    }
+    return `<p class="text-[15px] leading-7 text-black/65">${escapeHtml(value)}</p>`;
+  }
+
+  function syncPracticeScrollIndicator() {
+    const scroller = document.querySelector('[data-practice-scroll-content]');
+    const card = scroller?.closest('[data-presentation-item="practice"]');
+    if (!scroller || !card) return;
+
+    card.querySelector('[data-practice-scroll-indicator]')?.remove();
+
+    const update = () => {
+      card.querySelector('[data-practice-scroll-indicator]')?.remove();
+
+      const appShell = document.querySelector('#appShell');
+      if (appShell?.classList.contains('presentation-active')) return;
+
+      const hasOverflow = scroller.scrollHeight > scroller.clientHeight + 2;
+      const notAtBottom = scroller.scrollTop + scroller.clientHeight < scroller.scrollHeight - 2;
+
+      if (!hasOverflow || !notAtBottom) return;
+
+      const indicator = document.createElement('div');
+      indicator.dataset.practiceScrollIndicator = '';
+      indicator.className = 'pointer-events-none absolute bottom-2 right-2 grid h-7 w-7 place-items-center rounded-full border border-black/[0.06] bg-white/95 text-base font-bold shadow-[0_2px_10px_rgba(24,33,31,.14)]';
+      indicator.style.color = card.style.borderLeftColor || '#E4B85C';
+      indicator.setAttribute('aria-hidden', 'true');
+      indicator.textContent = '↓';
+      card.appendChild(indicator);
+    };
+
+    scroller.onscroll = () => {
+      card.querySelector('[data-practice-scroll-indicator]')?.remove();
+      requestAnimationFrame(update);
+    };
+
+    update();
+    requestAnimationFrame(() => {
+      update();
+      requestAnimationFrame(update);
+    });
+
+    if (window.ResizeObserver) {
+      if (scroller._practiceResizeObserver) scroller._practiceResizeObserver.disconnect();
+      scroller._practiceResizeObserver = new ResizeObserver(update);
+      scroller._practiceResizeObserver.observe(scroller);
+    }
+  }
+
   function labels() {
     return window.I18N[state.lang];
   }
@@ -44,6 +97,7 @@
     presentationItems().forEach((item, index) => {
       item.classList.toggle('is-revealed', isFullscreen && index < state.presentationStep);
     });
+    syncPracticeScrollIndicator();
   }
 
   function revealNextPresentationItem() {
@@ -160,9 +214,9 @@
               <div class="mb-3 flex items-center gap-3 text-[13px] font-bold" style="color:${part.accent}"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-[7px] bg-[#F4F5F1]">${icon('lightbulb',17)}</span><span>${t.important}</span></div>
               <p class="text-[15px] leading-7 text-black/65">${escapeHtml(content.keyPoint)}</p>
             </section>
-            <section data-presentation-item="practice" data-presentation-order="5" class="rounded-[8px] border border-black/[0.07] border-l-[3px] bg-white p-5 shadow-[0_8px_24px_rgba(24,33,31,.04)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(24,33,31,.09)]" style="border-left-color:${part.accent}">
-              <div class="mb-3 flex items-center gap-3 text-[13px] font-bold" style="color:${part.accent}"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-[7px] bg-[#F4F5F1]">${icon('check-circle-2',17)}</span><span>${t.practice}</span></div>
-              <p class="text-[15px] leading-7 text-black/65">${escapeHtml(content.practice)}</p>
+            <section data-presentation-item="practice" data-presentation-order="5" class="relative flex max-h-[380px] flex-col rounded-[8px] border border-black/[0.07] border-l-[3px] bg-white p-5 shadow-[0_8px_24px_rgba(24,33,31,.04)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(24,33,31,.09)]" style="border-left-color:${part.accent}">
+              <div class="mb-3 flex shrink-0 items-center gap-3 text-[13px] font-bold" style="color:${part.accent}"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-[7px] bg-[#F4F5F1]">${icon('check-circle-2',17)}</span><span>${t.practice}</span></div>
+              <div data-practice-scroll-content class="hide-scrollbar min-h-0 max-h-[316px] overflow-y-auto pr-1 pb-5">${renderBulletList(content.practice)}</div>
             </section>
           </div>
         </div>
@@ -184,6 +238,7 @@
 
     renderNav();
     syncPresentationItems();
+    requestAnimationFrame(syncPracticeScrollIndicator);
     updatePresentationButton();
     if (window.lucide) window.lucide.createIcons();
 
@@ -251,6 +306,7 @@
   $('#menuButton').addEventListener('click', openMenu);
   $('#closeMenu').addEventListener('click', closeMenu);
   $('#mobileOverlay').addEventListener('click', event => { if (event.target === $('#mobileOverlay')) closeMenu(); });
+  window.addEventListener('resize', syncPracticeScrollIndicator, { passive: true });
 
   render();
 })();

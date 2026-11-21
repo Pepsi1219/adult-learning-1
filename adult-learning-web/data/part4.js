@@ -3,30 +3,26 @@ window.COURSE_PARTS[3] = {
   id: 4, accent: "#9A7AAE", image: "images/part4/goals.svg",
   th: {
     title: "เป้าหมายในการเรียนรู้",
-    short: "ผู้เรียนจะทุ่มเทเมื่อเห็นประโยชน์และความเสี่ยง",
-    overview: "ผู้ใหญ่มีเป้าหมายในการเรียนรู้และจะทุ่มเทเวลาและพลังงาน หากทราบประโยชน์และผลเสียหากไม่ได้เรียนรู้ เริ่มแต่ละการสอนด้วยการระบุสิ่งที่จะได้รับจากการเรียนรู้และชี้แจงวัตถุประสงค์",
-    keyPoint: "เป้าหมายชัดเจนช่วยให้ผู้เรียนตัดสินใจว่าเนื้อหานั้นคุ้มค่ากับเวลาและพลังงานหรือไม่",
-    practice: "เปิดบทเรียนด้วยผลลัพธ์ที่วัดได้ อธิบายประโยชน์และข้อเสียหากไม่ลงมือปฏิบัติ สรุปเป้าหมายสั้น ๆ ในช่วงท้าย"
+    short: "ผู้ใหญ่จะเรียนรู้ได้ดีขึ้นเมื่อพวกเขาทราบว่า 'เรียนไปทำไม'",
+    keyPoint: "ผู้ใหญ่จะทุ่มเทสมาธิและพลังงานก็ต่อเมื่อรู้คำตอบของคำถามว่า \"เรียนเรื่องนี้ไปทำไม?\" หากไม่เห็นเป้าหมายและผลลัพธ์ที่ชัดเจน พวกเขาจะนั่งฟังแบบผ่าน ๆ โดยไม่เกิดการจดจำ",
+    practice: "• ประกาศเป้าหมายชัดเจนตั้งแต่ 3 นาทีแรกของการสอนว่า \"จบคลาสนี้แล้ว ผู้เรียนจะทำอะไรได้มากขึ้น และแก้ปัญหาอะไรได้บ้าง\"\n• เปรียบเทียบให้เห็นทั้ง \"ผลดีเมื่อทำสำเร็จ\" และ \"ผลกระทบหน้างานหากไม่ปรับเปลี่ยน\"\n• แบ่งเนื้อหาเป็นเป้าหมายย่อย ๆ ที่วัดผลได้ทีละขั้น เพื่อให้ผู้เรียนเห็นความสำเร็จของตัวเองระหว่างเรียน"
   },
   en: {
     title: "Learning Goals",
-    short: "Adults commit when benefits and consequences are clear",
-    overview: "Adults learn purposefully and invest time and energy when they understand benefits and the cost of not learning. Begin each session by naming what learners will gain and stating clear objectives.",
-    keyPoint: "Clear goals help learners decide whether the content deserves their time and effort.",
-    practice: "Open with observable outcomes, explain benefits and consequences of not acting, and recap goals at the end."
+    short: "Adults learn better when they know why they are learning",
+    keyPoint: "Adults invest their attention and energy only when they know the answer to \"Why am I learning this?\" Without clear goals and outcomes, they may listen passively and retain little.",
+    practice: "• State clear goals in the first three minutes: what learners will be able to do and which problems they will be able to solve after the course.\n• Compare the benefits of success with the workplace impact of failing to make changes.\n• Divide the content into measurable sub-goals, allowing learners to recognize their own progress step by step."
   },
   lo: {
     title: "ເປົ້າໝາຍການຮຽນຮູ້",
-    short: "ຜູ້ໃຫຍ່ຈະມຸ່ງເມື່ອປະໂຫຍດ ແລະຜົນທີ່ຈະເກີດຂຶ້ນຊັດເຈນ",
-    overview: "ຜູ້ໃຫຍ່ມີເປົ້າໝາຍ ແລະຈະລົງເວລາແລະພະລັງງານເມື່ອຮູ້ປະໂຫຍດຈາກການຮຽນຮູ້. ເລີ່ມແຕ່ລະສ່ວນດ້ວຍສິ່ງທີ່ຈະໄດ້ຮັບ ແລະຈຸດປະສົງທີ່ຊັດເຈນ.",
-    keyPoint: "ເປົ້າໝາຍທີ່ຊັດເຈນຊ່ວຍໃຫ້ຜູ້ຮຽນຕັດສິນວ່າຄວນລົງເວລາແລະພະລັງງານຫຼາຍປານໃດ.",
-    practice: "ເລີ່ມດ້ວຍຜົນທີ່ສາມາດວັດແທກໄດ້, ອະທິບາຍປະໂຫຍດ ແລະຜົນຂາດ ແລະສະຫຼຸບເປົ້າໝາຍທ້າຍບົດ."
+    short: "ຜູ້ໃຫຍ່ຈະຮຽນຮູ້ໄດ້ດີຂຶ້ນເມື່ອຮູ້ວ່າ 'ຮຽນເພື່ອຫຍັງ'",
+    keyPoint: "ຜູ້ໃຫຍ່ຈະສະມາດໃສ່ຈຸດສຸມ ແລະໃຊ້ພະລັງງານຕໍ່ເມື່ອຮູ້ຄຳຕອບຂອງຄຳຖາມ \"ເຮົາຮຽນອັນນີ້ເພື່ອຫຍັງ?\" ຖ້າບໍ່ເຫັນເປົ້າໝາຍ ແລະຜົນລັບທີ່ຊັດເຈນ ພວກເຂົາຈະນັ່ງຟັງແບບຜ່ານໄປ ໂດຍບໍ່ຈື່ຄວາມຮູ້.",
+    practice: "• ປະກາດເປົ້າໝາຍຊັດເຈນພາຍໃນ 3 ນາທີທຳອິດຂອງການສອນ: ເມື່ອຈົບຫຼັກສູດ ຜູ້ຮຽນຈະສາມາດເຮັດຫຍັງເພີ່ມຂຶ້ນ ແລະແກ້ບັນຫາໃດໄດ້.\n• ປຽບທຽບທັງ \"ຜົນດີເມື່ອປະສົບຜົນສຳເລັດ\" ແລະ \"ຜົນກະທົບຕໍ່ໜ້າວຽກຖ້າບໍ່ປັບປຸງ\".\n• ແບ່ງເນື້ອຫາເປັນເປົ້າໝາຍຍ່ອຍທີ່ວັດໄດ້ທີລະຂັ້ນຕອນ ເພື່ອໃຫ້ຜູ້ຮຽນເຫັນຄວາມສຳເລັດຂອງຕົນເອງຂະນະຮຽນ."
   },
   vi: {
     title: "Mục tiêu học tập",
-    short: "Người lớn cam kết khi lợi ích và rủi ro được làm rõ",
-    overview: "Người lớn học có mục đích và sẵn sàng đầu tư thời gian khi hiểu rõ lợi ích và hệ quả nếu không học. Hãy mở đầu bằng điều người học sẽ đạt được và mục tiêu cụ thể.",
-    keyPoint: "Mục tiêu rõ ràng giúp người học quyết định nội dung có đáng đầu tư thời gian và công sức hay không.",
-    practice: "Mở đầu bằng kết quả có thể quan sát, giải thích lợi ích và hậu quả nếu không hành động, rồi tóm tắt mục tiêu cuối buổi."
+    short: "Người lớn học tốt hơn khi biết lý do 'Học để làm gì'",
+    keyPoint: "Người lớn chỉ dành sự tập trung và năng lượng khi biết câu trả lời cho câu hỏi \"Học điều này để làm gì?\" Nếu không thấy mục tiêu và kết quả rõ ràng, họ có thể chỉ nghe qua loa mà không ghi nhớ.",
+    practice: "• Nêu mục tiêu rõ ràng trong 3 phút đầu: sau buổi học, người học có thể làm tốt hơn những gì và giải quyết được vấn đề nào.\n• So sánh cả \"lợi ích khi làm thành công\" và \"tác động tại nơi làm việc nếu không thay đổi\".\n• Chia nội dung thành các mục tiêu nhỏ có thể đo lường từng bước, để người học nhận ra tiến bộ của bản thân trong suốt buổi học."
   }
 };
