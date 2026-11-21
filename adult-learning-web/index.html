@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>6 Principles of Adult Learning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { ink: '#18211F', canvas: '#F4F5F1', moss: '#5F746F', gold: '#E4B85C' },
+        fontFamily: { sans: ['Inter','Noto Sans Thai','Noto Sans Lao','Be Vietnam Pro','sans-serif'] }
+      }}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :html { scroll-behavior: smooth; }
+    body { background: #F4F5F1; }
+    #appShell:fullscreen { width: 100%; min-height: 100vh; background: #F4F5F1; }
+    #presentationAdvance[hidden] { display: none; }
+    #appShell.presentation-active [data-presentation-item] {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: var(--presentation-from, translateY(20px));
+      filter: blur(7px);
+    }
+    #appShell.presentation-active [data-presentation-item="title"] { --presentation-from: translateY(28px) scale(.97); }
+    #appShell.presentation-active [data-presentation-item="image"] { --presentation-from: translateX(42px) scale(.96); }
+    #appShell.presentation-active [data-presentation-item="subtitle"] { --presentation-from: translateY(18px); }
+    #appShell.presentation-active [data-presentation-item="important"] { --presentation-from: translateX(-28px); }
+    #appShell.presentation-active [data-presentation-item="practice"] { --presentation-from: translateX(28px); }
+    #appShell.presentation-active [data-presentation-item].is-revealed {
+      visibility: visible;
+      pointer-events: auto;
+      animation: presentationReveal .7s cubic-bezier(.2,.75,.25,1) both;
+    }
+    @keyframes presentationReveal {
+      to { opacity: 1; transform: translate3d(0,0,0) scale(1); filter: blur(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #appShell.presentation-active [data-presentation-item].is-revealed { animation: none; opacity: 1; transform: none; filter: none; }
+    }
+    @media (min-width: 1024px) {
+      #sidebar { width: 72px; padding-left: 8px; padding-right: 8px; transition: width .2s ease, padding .2s ease; }
+      #sidebar:hover, #sidebar:focus-within { width: 300px; padding-left: 32px; padding-right: 32px; }
+      #sidebar > div:first-child { max-height: 0; margin-bottom: 0; overflow: hidden; opacity: 0; transition: max-height .2s ease, margin .2s ease, opacity .15s ease; }
+      #sidebar:hover > div:first-child, #sidebar:focus-within > div:first-child { max-height: 3rem; margin-bottom: 1.5rem; opacity: 1; }
+      #sidebar .sidebar-label { max-width: 0; overflow: hidden; opacity: 0; transition: max-width .2s ease, opacity .15s ease; }
+      #sidebar:hover .sidebar-label, #sidebar:focus-within .sidebar-label { max-width: 220px; opacity: 1; }
+    }
+    .hide-scrollbar::-webkit-scrollbar { display:none; }
+    .hide-scrollbar { scrollbar-width:none; }
+    .lesson-enter { animation: lessonEnter .42s cubic-bezier(.2,.75,.25,1); }
+    @keyframes lessonEnter { from { opacity:.25; transform:translateY(10px); } to { opacity:1; transform:none; } }
+    .nav-active::before { content:""; position:absolute; left:-1.5rem; width:3px; height:2.25rem; border-radius:999px; background:var(--accent); }
+    .lesson-image-frame { isolation: isolate; transform: translateZ(0); }
+    .lesson-image-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle 190px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,.72), rgba(255,255,255,.18) 36%, transparent 68%);
+      mix-blend-mode: soft-light;
+      transition: opacity .25s ease;
+    }
+    .lesson-image-frame::after {
+      content: "";
+      position: absolute;
+      inset: -45% -70%;
+      z-index: 3;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.72) 49%, rgba(255,255,255,.12) 54%, transparent 64%);
+      transform: translateX(-38%) rotate(8deg);
+      transition: transform .85s cubic-bezier(.2,.75,.25,1);
+    }
+    .lesson-image-frame:hover::before { opacity: 1; }
+    .lesson-image-frame:hover::after { transform: translateX(38%) rotate(8deg); }
+    .lesson-image-frame img {
+      z-index: 1;
+      transform: scale(.96);
+      filter: saturate(.94) contrast(.98);
+      transition: transform .7s cubic-bezier(.2,.75,.25,1), filter .7s ease;
+    }
+    .lesson-image-frame:hover img { transform: scale(1.02); filter: saturate(1.12) contrast(1.02); }
+    .cover-grid {
+      background-image: linear-gradient(rgba(24,33,31,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(24,33,31,.035) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at 78% 50%, black 0%, transparent 68%);
+    }
+    .cover-enter { background: linear-gradient(135deg, #F9FAF7 0%, #F1F4EE 70%, #EEF1EA 100%); }
+    .cover-enter::after {
+      content: "";
+      position: absolute;
+      right: 8%;
+      bottom: 10%;
+      width: clamp(180px, 25vw, 360px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(228,184,92,.18) 0%, rgba(228,184,92,.06) 42%, transparent 68%);
+      filter: blur(3px);
+      animation: coverPulse 5s ease-in-out infinite;
+    }
+    .cover-orbit { animation: orbitFloat 12s ease-in-out infinite alternate; }
+    .cover-orbit::before, .cover-orbit::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #E4B85C;
+      box-shadow: 0 0 24px rgba(228,184,92,.55);
+    }
+    .cover-orbit::before { top: 8%; left: 20%; }
+    .cover-orbit::after { right: 8%; bottom: 18%; width: 8px; background: #79A69C; }
+    .cover-orbit span { position: absolute; inset: 19%; border: 1px dashed rgba(95,116,111,.20); border-radius: 50%; animation: orbitSpin 24s linear infinite; }
+    .cover-orbit-two { animation-duration: 15s; animation-delay: -4s; }
+    .cover-kicker { animation: coverRise .7s .1s cubic-bezier(.2,.75,.25,1) both; }
+    .cover-title { animation: coverRise .85s .22s cubic-bezier(.2,.75,.25,1) both; }
+    .cover-subtitle { animation: coverRise .85s .38s cubic-bezier(.2,.75,.25,1) both; }
+    @keyframes coverRise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+    @keyframes orbitFloat { from { transform: translate3d(-2%,1%,0) rotate(-8deg); } to { transform: translate3d(3%,-2%,0) rotate(12deg); } }
+    @keyframes orbitSpin { to { transform: rotate(360deg); } }
+    @keyframes coverPulse { 50% { transform: scale(1.16); opacity: .55; } }
+    @media (prefers-reduced-motion: reduce) {
+      .cover-orbit, .cover-orbit span, .cover-enter::after, .cover-kicker, .cover-title, .cover-subtitle { animation: none; }
+    }
+    @media (min-width: 1024px) {
+      .lesson-image-frame img { transform: scale(1.018); }
+      .lesson-image-frame:hover img { transform: scale(1.065); }
+    }
+    .lesson-image-frame .liquid-wash {
+      position: absolute;
+      left: var(--wash-left, 58%);
+      top: var(--wash-top, 58%);
+      right: auto;
+      bottom: auto;
+      z-index: 0;
+      width: 48%;
+      aspect-ratio: 1;
+      border-radius: 44% 56% 60% 40% / 46% 42% 58% 54%;
+      pointer-events: none;
+      background: rgba(255,255,255,.38);
+      border: 1px solid rgba(255,255,255,.58);
+      box-shadow: inset 18px 18px 30px rgba(255,255,255,.24), 0 18px 50px rgba(24,33,31,.10);
+      backdrop-filter: blur(10px) saturate(1.25);
+      opacity: .82;
+      animation: liquidFloat 9s ease-in-out infinite alternate;
+    }
+    @keyframes liquidFloat {
+      0% { transform: translate(-10%, 8%) rotate(-18deg) scale(.92); border-radius: 44% 56% 60% 40% / 46% 42% 58% 54%; }
+      28% { transform: translate(18%, -14%) rotate(-4deg) scale(1.03); border-radius: 58% 42% 38% 62% / 55% 58% 42% 45%; }
+      58% { transform: translate(-24%, -32%) rotate(9deg) scale(.96); border-radius: 36% 64% 52% 48% / 62% 38% 62% 38%; }
+      100% { transform: translate(28%, 18%) rotate(24deg) scale(1.08); border-radius: 62% 38% 64% 36% / 42% 62% 38% 58%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lesson-image-frame .liquid-wash { animation: none; }
+    }
+    @media (hover: none) {
+      .lesson-image-frame img { transform: none; }
+      .lesson-image-frame::before, .lesson-image-frame::after { display: none; }
+    }
+  </style>
+</head>
+<body class="font-sans text-ink antialiased">
+  <div id="appShell" class="min-h-screen lg:h-screen lg:overflow-hidden">
+    <header class="fixed inset-x-0 top-0 z-40 h-16 border-b border-black/[0.07] bg-[#F4F5F1]/95 backdrop-blur-xl">
+      <div class="mx-auto flex h-full max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-6">
+        <div class="flex min-w-0 items-center gap-3">
+          <img src="logo.svg" alt="NAN YANG TEXTILE GROUP" class="h-9 w-9 shrink-0 rounded-[8px] bg-black object-contain">
+          <div class="min-w-0">
+            <p id="brand" class="truncate text-[11px] font-bold tracking-[0.12em] text-ink">NAN YANG TEXTILE GROUP</p>
+            <p id="eyebrow" class="hidden text-[10px] text-black/45 sm:block">Functional Skill Knowledge Training and Development</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="menuButton" class="grid h-9 w-9 place-items-center rounded-[8px] border border-black/10 lg:hidden" aria-label="Open menu"><i data-lucide="menu" class="h-4 w-4"></i></button>
+          <div id="languageSwitcher" class="flex h-9 items-center rounded-[8px] border border-black/10 bg-white p-1" aria-label="Language switcher">
+            <button data-lang="th" class="h-7 min-w-8 rounded-[6px] px-2 text-xs font-semibold transition">TH</button>
+            <button data-lang="en" class="h-7 min-w-8 rounded-[6px] px-2 text-xs font-semibold transition">EN</button>
+            <button data-lang="lo" class="h-7 min-w-8 rounded-[6px] px-2 text-xs font-semibold transition">LO</button>
+            <button data-lang="vi" class="h-7 min-w-8 rounded-[6px] px-2 text-xs font-semibold transition">VI</button>
+          </div>
+          <button id="presentationButton" class="hidden h-9 w-9 place-items-center rounded-[8px] border border-black/10 bg-white transition hover:bg-black/[0.05] lg:grid" type="button" aria-label="Presentation mode" aria-pressed="false" title="Presentation mode"><i data-lucide="maximize" class="h-4 w-4"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="sidebar" class="fixed bottom-0 left-0 top-16 z-30 hidden w-[72px] border-r border-black/[0.07] bg-[#EEF0EA] px-4 py-8 lg:block">
+      <div class="mb-6">
+        <p id="sidebarProgress" class="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-black/40">Progress</p>
+        <div class="h-1 overflow-hidden rounded-full bg-black/[0.08]"><div id="progressBar" class="h-full rounded-full bg-ink transition-all duration-500" style="width:16.66%"></div></div>
+      </div>
+      <nav id="lessonNav" class="hide-scrollbar max-h-[calc(100vh-10rem)] space-y-1 overflow-y-auto"></nav>
+    </aside>
+
+    <main class="pt-16 lg:ml-[72px] lg:h-screen lg:overflow-y-auto">
+      <section id="lessonContent" class="mx-auto w-full max-w-none px-5 py-6 sm:px-8 lg:h-full lg:px-10 lg:pt-8 lg:pb-8 xl:px-12 2xl:px-16"></section>
+    </main>
+
+    <div id="mobileOverlay" class="fixed inset-0 z-50 hidden bg-black/30 backdrop-blur-sm lg:hidden">
+      <aside class="h-full w-[min(88%,320px)] bg-[#EEF0EA] px-6 py-5 shadow-2xl">
+        <div class="mb-6 flex items-center justify-between"><p id="mobileMenuTitle" class="text-sm font-bold">Lesson menu</p><button id="closeMenu" class="grid h-9 w-9 place-items-center rounded-[8px] border border-black/10"><i data-lucide="x" class="h-4 w-4"></i></button></div>
+        <nav id="mobileLessonNav" class="space-y-1"></nav>
+      </aside>
+    </div>
+  </div>
+
+  <script src="i18n/th.js"></script>
+  <script src="i18n/en.js"></script>
+  <script src="i18n/lo.js"></script>
+  <script src="i18n/vi.js"></script>
+  <script src="data/part0.js"></script>
+  <script src="data/part1.js"></script>
+  <script src="data/part2.js"></script>
+  <script src="data/part3.js"></script>
+  <script src="data/part4.js"></script>
+  <script src="data/part5.js"></script>
+  <script src="data/part6.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
